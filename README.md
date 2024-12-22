@@ -1,4 +1,6 @@
 # Multiclass Classiffication. Dry Bean dataset.
+  Five classical supervised machine learning algorithms (Support Vector Machine (SVM), Decision Tree (DT), k-Nearest Neighbors (KNN), Random Forest (RF) and Multilayer Perceptron (MLP)) were employed to classify beans. Subsequently, the three models with the highest average weighted F1-scores were chosen. We then tuned the hyperparameters of these models to identify the one that achieves the best averaged weighted F1 score, optimizing it for this specific multi-class classification task.
+
 Publicly available Dry Bean dataset is used in this experiment: [Dry Bean](https://archive.ics.uci.edu/dataset/602)
 
 ### Notebook structure
@@ -17,5 +19,8 @@ Publicly available Dry Bean dataset is used in this experiment: [Dry Bean](https
 #### 3_beans_PCA.ipynb
 - Apply Principal Component Analysis (PCA) to the training and validation datasets to reduce dimensionality.
 - Train SVM, DT, KNN, RF, and MLP models using the top 4 principal components (describe 95% variance) derived from PCA. Validate the performance of these models on the validation set.
+
+#### Dry Bean_Report.pdf
+- This document offers a thorough description of the experiments conducted, methodologies used, and the main findings from the study on dry bean classification.
 
 
