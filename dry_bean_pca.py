@@ -108,9 +108,9 @@ train_labels[:5]
 
 # Train SVM, DT and KNN models
 
-svm_clf = SVC(kernel="linear")
+svm_clf = SVC()
 dt_clf = DecisionTreeClassifier(random_state=42)
-knn_clf = KNeighborsClassifier(n_neighbors=10)
+knn_clf = KNeighborsClassifier()
 
 svm_clf.fit(pca_train_features, train_labels)
 dt_clf.fit(pca_train_features, train_labels)
@@ -128,24 +128,18 @@ print("KNN Accuracy:", accuracy_score(val_labels, knn_predictions))
 
 # Detailed classification report
 print("\nClassification Report for SVM:")
-print(classification_report(val_labels, svm_predictions))
+print(classification_report(val_labels, svm_predictions, digits=4))
 
 print("Classification Report for Decision Tree:")
-print(classification_report(val_labels, dt_predictions))
+print(classification_report(val_labels, dt_predictions, digits=4))
 
 print("Classification Report for KNN:")
-print(classification_report(val_labels, knn_predictions))
+print(classification_report(val_labels, knn_predictions, digits=4))
 
 # Train RF and MLP
 
-rf_clf = RandomForestClassifier(n_estimators=100, random_state=42)
-mlp_clf = MLPClassifier(
-    hidden_layer_sizes=(100,),
-    max_iter=500,
-    activation="relu",
-    solver="adam",
-    random_state=42,
-)
+rf_clf = RandomForestClassifier(random_state=42)
+mlp_clf = MLPClassifier(max_iter=500, random_state=42)
 
 rf_clf.fit(pca_train_features, train_labels)
 mlp_clf.fit(pca_train_features, train_labels)
@@ -160,7 +154,7 @@ print("MLP Neural Network Accuracy:", accuracy_score(val_labels, mlp_predictions
 
 # Detailed classification reports
 print("\nClassification Report for Random Forest:")
-print(classification_report(val_labels, rf_predictions))
+print(classification_report(val_labels, rf_predictions, digits=4))
 
 print("Classification Report for MLP Neural Network:")
-print(classification_report(val_labels, mlp_predictions))
+print(classification_report(val_labels, mlp_predictions, digits=4))
